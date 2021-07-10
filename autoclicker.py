@@ -5,21 +5,21 @@ from time import sleep
 
 mouse = Controller()
 active = False
-lastKey = None
+last_key = None
 
-def on_press(pressedKey):
+def on_press(pressed_key):
     global active
-    global lastKey
+    global last_key
     
     # if you try to call pressedKey.char when pressedKey is a key object, then
     # it throws an AttributeError and this thread closes
-    if not isinstance(pressedKey, Key):
-        if pressedKey.char == ']':
-            if not isinstance(lastKey, Key):
-                if lastKey.char == '[':
+    if not isinstance(pressed_key, Key):
+        if pressed_key.char == ']':
+            if not isinstance(last_key, Key):
+                if last_key.char == '[':
                     active = not active
 
-    lastKey = pressedKey
+    last_key = pressed_key
     
 def clicker():
     while True:
