@@ -8,8 +8,8 @@ active = False
 last_key = None
 
 def on_press(pressed_key):
-   global active
-   global last_key
+    global active
+    global last_key
     # if you try to call pressedKey.char when pressedKey is a key object, then
     # it throws an AttributeError and this thread closes
     if not isinstance(pressed_key, Key):
